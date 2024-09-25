@@ -3,6 +3,18 @@
   "style": "default",
   "rsc": true,
   "tsx": true,
+  "icons": [
+      {
+        "src": "/logo.png",
+        "type": "image/png",
+        "sizes": "400x401"
+      },
+      {
+        "src": "/apple-touch-icon.png",
+        "type": "image/png",
+        "sizes": "400x401"
+      }
+    ],
   "tailwind": {
     "config": "tailwind.config.ts",
     "css": "src/app/globals.css",
