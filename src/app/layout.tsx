@@ -25,7 +25,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="manifest" href="/manifest.json" />
-        <meta name="theme-color" content="#000000" />
+        <meta name="theme-color" content="#ffffff" />
         <link rel="icon" href="/logo.png" type="image/x-icon"/>
       </head>
       <body className={inter.className}>
