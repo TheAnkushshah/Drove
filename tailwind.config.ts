@@ -18,6 +18,9 @@ const config = {
       },
     },
     extend: {
+      screens: {
+        'custom-md': '901px', // Custom breakpoint for 901px
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

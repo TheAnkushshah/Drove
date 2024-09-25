@@ -2,10 +2,9 @@ import Link from "next/link";
 
 export function Footer() {
   return (
-    <div className="h-40 bg-gray-100 mt-12 flex items-center">
+    <div className="hidden custom-md:flex h-40 bg-gray-100 mt-12 items-center"> {/* Use custom-md to hide below 901px */}
       <div className="container mx-auto flex justify-between items-center">
-
-      <Link className="text-blue-900 hover:text-blue-500" href="https://github.com">
+        <Link className="text-blue-900 hover:text-blue-500" href="https://github.com">
           Github
         </Link>
         <Link className="text-blue-900 hover:text-blue-500" href="https://youtube.com">
@@ -17,10 +16,7 @@ export function Footer() {
         <Link className="text-blue-900 hover:text-blue-500" href="/privacy">
           Build with ❤️ By Ankush Shah
         </Link>
-        <Link
-          className="text-blue-900 hover:text-blue-500"
-          href="https://x.com"
-        >
+        <Link className="text-blue-900 hover:text-blue-500" href="https://x.com">
           Twitter
         </Link>
         <Link className="text-blue-900 hover:text-blue-500" href="https://facebook.com">
