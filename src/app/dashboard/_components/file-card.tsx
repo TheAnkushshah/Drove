@@ -38,11 +38,11 @@ export function FileCard({
           <div className="flex justify-center">{typeIcons[file.type]}</div>{" "}
           {file.name}
         </CardTitle>
-        <div className="absolute top-2 right-2">
+        <div className="absolute top-5 right-4">
           <FileCardActions isFavorited={file.isFavorited} file={file} />
         </div>
       </CardHeader>
-      <CardContent className="h-[200px] flex justify-center items-center">
+      <CardContent className="h-[300px] flex justify-center items-center">
         {file.type === "image" && file.url && (
           <Image alt={file.name} width="200" height="100" src={file.url} />
         )}
@@ -51,7 +51,7 @@ export function FileCard({
         {file.type === "pdf" && <FileTextIcon className="w-20 h-20" />}
       </CardContent>
       <CardFooter className="flex justify-between">
-        <div className="flex gap-2 text-xs text-gray-700 w-40 items-center">
+        <div className="flex gap-2 text-xs text-gray-700 w-39 items-center">
           <Avatar className="w-6 h-6">
             <AvatarImage src={userProfile?.image} />
             <AvatarFallback>CN</AvatarFallback>
