@@ -19,6 +19,8 @@ Replicates google drive, a widely used file sharing and saving tool. It enables 
 
 - Next.js
 - TypeScript
+- HTML5
+- CSS3
 - Clerk
 - Convex
 - shadcn
