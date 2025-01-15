@@ -1,6 +1,6 @@
 ### Drove
 
-Replicates google drive, a widely used file sharing and saving tool. It enables users to securely log in, uploading files, create teams and access various functionalities such as group file sharing, saving, and managing members.
+Replicates google drive, a widely used file sharing and saving tool. It enables users to securely login & signup, uploading files, create teams and access various functionalities such as group file sharing, saving, managing members and many more.
 
 ### Preview
 
