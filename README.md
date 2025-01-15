@@ -1,23 +1,21 @@
-<a name="readme-top"></a>
+### Drove
 
-# Drove - A File Saving & Sharing Platform
+Replicates google drive, a widely used file sharing and saving tool. It enables users to securely log in, uploading files, create teams and access various functionalities such as group file sharing, saving, and managing members.
+
+### Preview
 
 ![image](public/Preview.png)
 
-## <a name="table">Table of Contents</a>
+### <a name="table">Table of Contents</a>
 
-1. [Introduction](#introduction)
-2. [Tech Stack](#tech-stack)
-3. [Features](#features)
-4. [Getting Started](#getting-started)
-5. [Screenshots](#more-screenshots)
-6. [Feedback](#feedback)
+1. [Tech Stack](#tech-stack)
+2. [Features](#features)
+3. [Getting Started](#getting-started)
+4. [Feedback](#feedback)
+5. [Contributors](#contributors)
 
-## <a name="introduction">Introduction</a>
 
-Built with the latest Next.js and TypeScript, this project replicates google drive, a widely used file sharing and saving tool. It enables users to securely log in, uploading files, create teams and access various functionalities such as group file sharing, saving, and managing members.
-
-## <a name="tech-stack">Tech Stack</a>
+### <a name="tech-stack">Tech Stack</a>
 
 - Next.js
 - TypeScript
@@ -26,99 +24,207 @@ Built with the latest Next.js and TypeScript, this project replicates google dri
 - shadcn
 - Tailwind CSS
 
-## <a name="features">Features</a>
+### <a name="features">Features</a>
 
-**Authentication**: Implements authentication and authorization features using Clerk, allowing users to securely log in via social sign-on or traditional email and password methods, while ensuring appropriate access levels and permissions within the platform.
+- **Authentication**: Implements authentication and authorization features using Clerk, allowing users to securely log in via social sign-on or traditional email and password methods, while ensuring appropriate access levels and permissions within the platform.
 
-**File Sharing**: Share files and folders with others easily, controlling their access levels (view, comment, or edit)
+- **File Sharing**: Share files and folders with others easily, controlling their access levels (view, comment, or edit)
 
-**Cloud Storage**: Store files and access them from any device with internet connectivity.
+- **Cloud Storage**: Store files and access them from any device with internet connectivity.
 
-**Collaboration**: Work simultaneously on documents, spreadsheets, and presentations with real-time editing and commenting.
+- **Collaboration**: Work simultaneously on documents, spreadsheets, and presentations with real-time editing and commenting.
 
-**Offline Access**: Access and edit files offline, with changes syncing automatically once reconnected to the internet.
+- **Offline Access**: Access and edit files offline, with changes syncing automatically once reconnected to the internet.
 
-**File Organization**: Use folders and labels to organize files efficiently.
+- **File Organization**: Use folders and labels to organize files efficiently.
 
-**Search Functionality**: Powerful search tools to quickly locate files using keywords, file types, or owner details.
+- **Search Functionality**: Powerful search tools to quickly locate files using keywords, file types, or owner details.
 
-**Version History**: View and restore previous versions of files to track changes over time.
+- **Version History**: View and restore previous versions of files to track changes over time.
 
-**Security Features**: Protect files with encryption and two-factor authentication for added security.
+- **Security Features**: Protect files with encryption and two-factor authentication for added security.
 
-**Responsive Design**: Follows responsive design principles to ensure optimal user experience across devices, adapting seamlessly to different screen sizes and resolutions.
+- **Responsive Design**: Follows responsive design principles to ensure optimal user experience across devices, adapting seamlessly to different screen sizes and resolutions.
 
-and many more, including code architecture and reusability. 
+### <a name="getting-started">Getting Started</a>
 
-## <a name="getting-started">Getting Started</a>
-
-**Make sure you have the following installed on your machine**
+### Prerequisites
 
 - [Git](https://git-scm.com/)
 - [Node.js](https://nodejs.org/en)
 - [npm](https://www.npmjs.com/) (Node Package Manager)
 
-**Cloning the Repository**
+1. **Cloning:** 
 
-```bash
-git clone https://github.com/theankushshah/drove.git
-cd drove-clone
-```
+    Run the following command in your terminal or command prompt to clone the repository to your local machine:
 
-**Installation**
+    ```bash
+    git clone https://github.com/theankushshah/drove.git
+    ```
 
-Install the project dependencies using npm:
+2. **Navigate to the Directory:** 
+    
+    Once cloned, navigate into the project directory using the `cd` command:
 
-```bash
-npm install
-```
+    ```bash
+    cd drove
+    ```
 
-**Set Up Environment Variables**
+### Download
 
-Create a new file named `.env` in the root of your project and add the following content:
+1. **Download ZIP Code folder:** 
 
-```env
-CONVEX_DEPLOYMENT=
-NEXT_PUBLIC_CONVEX_URL=
+    Unzip the folder in your machine.
 
-NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
-CLERK_SECRET_KEY=
-```
+2. **Navigate to the Downloaded Directory:** 
 
-Replace the placeholder values with your actual Clerk & convex credentials. You can obtain these credentials by signing up on the [Clerk website](https://clerk.com/) and [Convex website](https://www.convex.dev/)
+    Open your code editor and open the unzipped folder in it then:
 
-Also get you Issuer url by creating a JWT Template on clerk and replace with mine in application
+    ```bash
+    cd /path/to/downloaded/folder
+    ```
 
-Get your hostname from convex too and replace with mine
+### Cloning & Download
 
-Add CLERK_SECREY_KEY on convex website enviorment variable
+1. **Dependencies Installation:**
 
-**Running the Project**
+    ```bash
+    npm install
+    ```
 
-```bash
-npm run dev
-```
+2. **Environment Variables & Database Setup:** 
 
-Open [http://localhost:3000](http://localhost:3000) in your browser to view the project.
+    Create a new file named `.env` in the root of your project and add the following content:
 
-## More Screenshots
+    ```env
+    CONVEX_DEPLOYMENT=
+    NEXT_PUBLIC_CONVEX_URL=
 
-![image](public/apple.png)
+    NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+    CLERK_SECRET_KEY=
+    ```
 
-![image](public/ball.png)
+    Replace the placeholder values with your actual Clerk & convex credentials. You can obtain these credentials by signing up on the [Clerk website](https://clerk.com/) and [Convex website](https://www.convex.dev/)
 
-![image](public/cat.png)
+    Also get you Issuer url by creating a JWT Template on clerk and replace with mine in application.
 
-![image](public/dog.png)
+    Get your hostname from convex too and replace with mine.
 
-![image](public/fish.png)
+    Add CLERK_SECREY_KEY on convex website enviorment variable.
 
-## Feedback
+3. **Running:**
+
+    ```bash
+    npm run dev
+    ```
+
+    Open [http://localhost:3000](http://localhost:3000) in your browser to view the project.
+
+4. **Start Coding:** 
+
+    Feel free to edit the code according to your requirements. 
+
+5. **Testing**
+
+    ```bash
+    npm test
+    ```
+
+6. **Build for Production**
+
+    ```bash
+    npm run build
+    ```
+
+### Github
+
+1. **Initialize a New Git Repository:**
+
+    ```bash
+    git init
+    ```
+
+2. **Stage and Commit the Code:**
+
+    ```bash
+    git add .
+    git commit -m "Initial commit"
+    ```
+
+3. **Create a New Repository on GitHub:**
+
+    Do not initialize the new repository with a README, .gitignore, or license.
+
+4. **Link Local Repository to GitHub:**
+
+    ```bash
+    git remote add origin https://github.com/username/new-repo.git
+    ```
+
+    Replace https://github.com/username/new-repo.git with your actual repository URL.
+
+5. **Push Code to GitHub:**
+
+    ```bash
+    git branch -m main
+    git pull origin main
+    git push -u origin main
+    ```
+
+6. **Deployment:** 
+    
+    Deploy the application to your preferred hosting platform to make it accessible online.
+
+
+### Forking
+
+1. **Forking:** 
+
+    Run the following command in your terminal or command prompt to fork the repository to your local machine:
+
+    ```bash
+    git clone https://github.com/your-username/drove.git
+    ```
+
+2. **Navigate to the Directory:** 
+
+    Once cloned, navigate into the project directory using the `cd` command:
+
+    ```bash
+    cd drove
+    ```
+
+3. **Start Coding:** 
+
+    Make the additions & desired changes to the code.
+
+4. **Commit & Push Your Changes to Your Fork:** 
+
+    Once cloned, navigate into the project directory using the `cd` command:
+
+    ```bash
+    git add .
+    git commit -m ""
+    git pull origin main
+    git push -u origin main
+    ```
+
+5. **Create a Pull Request:**
+
+- Go to your forked repository on GitHub
+- Click the "Compare & pull request" button.
+- Review your changes and write a clear description of your contribution.
+- Click "Create pull request"
+
+    **I will review your pull request and decide whether to merge your changes into my repository or not**
+
+### <a name="feedback">Feedback</a>
 
 You might encounter some bugs while using this app. You are more than welcome to contribute. Just submit changes via pull request and I will review them before merging. Make sure you follow community guidelines.
 
-## Developer & Main
+### <a name="contributors">Contributors & Main</a>
 
-- Ankush Shah (ankushsahvlogs@gmail.com) (Main)
+- Ankush Shah (ankushsahvlogs@gmail.com)
+- Haven Futures (support@havenfutures.com) (Main)
 
-Happy coding! 🚀
+Happy coding!
