@@ -14,16 +14,17 @@ Replicates google drive, a widely used file sharing and saving tool. It enables 
 4. [Feedback](#feedback)
 5. [Contributors](#contributors)
 
-
 ### <a name="tech-stack">Tech Stack</a>
 
 - Next.js
 - TypeScript
 - HTML5
 - CSS3
+- Node.js
+- NPM
+- NPX
 - Clerk
 - Convex
-- shadcn
 - Tailwind CSS
 
 ### <a name="features">Features</a>
@@ -176,7 +177,6 @@ Replicates google drive, a widely used file sharing and saving tool. It enables 
 6. **Deployment:** 
     
     Deploy the application to your preferred hosting platform to make it accessible online.
-
 
 ### Forking
 
