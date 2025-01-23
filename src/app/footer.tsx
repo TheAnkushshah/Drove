@@ -14,7 +14,7 @@ export function Footer() {
           Instagram
         </Link>
         <Link className="text-blue-900 hover:text-blue-500" href="/">
-          Built with ❤️ By Haven Futures
+          Built with 💚 By Haven Futures
         </Link>
         <Link className="text-blue-900 hover:text-blue-500" href="https://x.com/havenfutures">
           Twitter

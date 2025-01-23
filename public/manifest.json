@@ -5,12 +5,12 @@
       {
         "src": "/logo.png",
         "type": "image/png",
-        "sizes": "400x400"
+        "sizes": "410x410"
       },
       {
         "src": "/apple-touch-icon.png",
         "type": "image/png",
-        "sizes": "400x400"
+        "sizes": "410x410"
       }
     ],
     "start_url": "/.",
