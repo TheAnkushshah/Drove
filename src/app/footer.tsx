@@ -2,9 +2,9 @@ import Link from "next/link";
 
 export function Footer() {
   return (
-    <div className="bg-gray-100 mt-12 py-8 pb-60 custom-md:py-0"> {/* Added py-4 for top and bottom padding */}
+    <div className="bg-gray-100 mt-12 py-8 pb-48 custom-md:py-0"> {/* Added py-4 for top and bottom padding */}
       {/* Footer Container */}
-      <div className="container mx-auto flex flex-col items-center custom-md:flex-row justify-between gap-4 h-40">
+      <div className="container mx-auto flex flex-col items-center custom-md:flex-row justify-between gap-4 h-52">
         {/* Built with Haven Futures - Centered on small screens */}
         <div className="text-center custom-md:text-left w-full">
           <span className="text-blue-900">
