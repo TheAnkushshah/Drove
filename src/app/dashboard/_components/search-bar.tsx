@@ -4,7 +4,6 @@ import {
   FormControl,
   FormField,
   FormItem,
-  FormLabel,
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
@@ -14,6 +13,7 @@ import { Dispatch, SetStateAction } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
+// Schema for form validation
 const formSchema = z.object({
   query: z.string().min(0).max(200),
 });
@@ -25,13 +25,13 @@ export function SearchBar({
   query: string;
   setQuery: Dispatch<SetStateAction<string>>;
 }) {
+  // Initialize form with schema and default values
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
-    defaultValues: {
-      query,
-    },
+    defaultValues: { query },
   });
 
+  // Handle form submission
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setQuery(values.query);
   }
@@ -43,6 +43,7 @@ export function SearchBar({
           onSubmit={form.handleSubmit(onSubmit)}
           className="flex gap-2 items-center"
         >
+          {/* Input field for search query */}
           <FormField
             control={form.control}
             name="query"
@@ -56,6 +57,7 @@ export function SearchBar({
             )}
           />
 
+          {/* Submit button with loading state */}
           <Button
             size="sm"
             type="submit"

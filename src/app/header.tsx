@@ -16,37 +16,44 @@ export function Header() {
   const pathname = usePathname(); // Get the current path
 
   // Check if the user is on the homepage
-  const isHomePage = pathname === "/" || pathname === "/landing"; 
+  const isHomePage = pathname === "/" || pathname === "/landing";
 
   return (
     <div className="relative z-10 border-b py-4 bg-gray-50">
-      <div className="items-center container mx-auto justify-between flex gap-36">
+      <div className="container mx-auto flex items-center justify-between gap-4 px-4 sm:gap-10 sm:px-6 lg:px-8">
         {/* Logo and App Name */}
-        <Link href="/" className="flex gap-3 items-center text-xl text-black">
-          <Image src="/logo.png" width="50" height="50" alt="Drove" />
-          Drove
+        <Link
+          href="/"
+          className="flex gap-2.5 items-center text-lg sm:text-xl text-black whitespace-nowrap"
+        >
+          <Image src="/logo.png" width="40" height="40" alt="Drove" />
+          <span>Drove</span>
         </Link>
 
-        {/* Show "Your Files" button only when signed in */}
-        <SignedIn>
-          <Button variant={"outline"}>
-            <Link href="/dashboard/files">Your Files</Link>
-          </Button>
-        </SignedIn>
+        {/* Right-side actions */}
+        <div className="flex items-center gap-2 sm:gap-4">
+          {/* Show "Your Files" button only when signed in and on larger screens */}
+          <SignedIn>
+            <Button
+              variant={"outline"}
+              className="hidden sm:block"
+            >
+              <Link href="/dashboard/files">Your Files</Link>
+            </Button>
+          </SignedIn>
 
-        <div className="flex gap-2">
           {/* Conditionally show OrganizationSwitcher and UserButton on non-home pages */}
           {!isHomePage && (
-            <>
+            <div className="flex items-center gap-2 mt-1.5">
               <OrganizationSwitcher />
               <UserButton />
-            </>
+            </div>
           )}
 
           {/* Show Sign In Button when signed out */}
           <SignedOut>
             <SignInButton>
-              <Button>Sign In</Button>
+              <Button className="text-sm sm:text-base">Sign In</Button>
             </SignInButton>
           </SignedOut>
         </div>

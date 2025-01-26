@@ -21,7 +21,6 @@ import {
 import { Doc } from "../../../../convex/_generated/dataModel";
 import { Label } from "@/components/ui/label";
 
-// Modify the Placeholder component to accept a sectionType for different images
 function Placeholder({
   message,
   showButton,
@@ -31,23 +30,23 @@ function Placeholder({
   showButton: boolean;
   sectionType: "favorites" | "deleted" | "general";
 }) {
-  // Choose image based on sectionType
-  let imageSrc = "/empty.svg"; // Default image
+  let imageSrc = "/empty.svg";
   if (sectionType === "favorites") {
-    imageSrc = "/favorites-empty.svg"; // Image for favorites
+    imageSrc = "/favorites-empty.svg";
   } else if (sectionType === "deleted") {
-    imageSrc = "/trash-empty.svg"; // Image for deleted section
+    imageSrc = "/trash-empty.svg";
   }
 
   return (
-    <div className="flex flex-col gap-8 w-full items-center mt-24">
+    <div className="flex flex-col gap-8 w-full items-center mt-24 px-4">
       <Image
         alt={`Image for ${sectionType} section`}
         width="300"
         height="300"
         src={imageSrc}
+        className="w-48 md:w-64"
       />
-      <div className="text-2xl">{message}</div>
+      <div className="text-xl md:text-2xl text-center">{message}</div>
       {showButton && <UploadButton />}
     </div>
   );
@@ -89,6 +88,7 @@ export function FileBrowser({
         }
       : "skip"
   );
+
   const isLoading = files === undefined;
 
   const modifiedFiles =
@@ -97,55 +97,50 @@ export function FileBrowser({
       isFavorited: (favorites ?? []).some(
         (favorite) => favorite.fileId === file._id
       ),
-      url: file.url || null,  // Ensure url is included; set default to null
+      url: file.url || null,
     })) ?? [];
 
-  // Determine the placeholder message, button visibility, and section type
   let placeholderMessage = "You have no files, upload one now :(";
   let showUploadButton = true;
   let sectionType: "favorites" | "deleted" | "general" = "general";
 
   if (favoritesOnly) {
-    placeholderMessage = "You have no favorite files !";
+    placeholderMessage = "You have no favorite files!";
     sectionType = "favorites";
   } else if (deletedOnly) {
     placeholderMessage = "Your trash is empty :)";
-    showUploadButton = false; // No upload button in Trash section
+    showUploadButton = false;
     sectionType = "deleted";
   }
 
   return (
-    <div>
-      <div className="flex justify-between items-center mb-8">
-        <h1 className="text-4xl font-bold">{title}</h1>
-
+    <div className="p-4">
+      <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
+        <h1 className="text-2xl md:text-4xl font-bold text-center">{title}</h1>
         <SearchBar query={query} setQuery={setQuery} />
-
-        {/* Show upload button only for non-trash sections */}
         {!deletedOnly && <UploadButton />}
       </div>
 
       <Tabs defaultValue="grid">
-        <div className="flex justify-between items-center">
-          <TabsList className="mb-2">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+          <TabsList className="mb-2 flex gap-2">
             <TabsTrigger value="grid" className="flex gap-2 items-center">
               <GridIcon />
               Grid
             </TabsTrigger>
             <TabsTrigger value="table" className="flex gap-2 items-center">
-              <RowsIcon /> Table
+              <RowsIcon />
+              Table
             </TabsTrigger>
           </TabsList>
 
-          <div className="flex gap-2 items-center">
+          <div className="flex flex-col md:flex-row gap-4 items-center">
             <Label htmlFor="type-select">Type Filter</Label>
             <Select
               value={type}
-              onValueChange={(newType) => {
-                setType(newType as any);
-              }}
+              onValueChange={(newType) => setType(newType as any)}
             >
-              <SelectTrigger id="type-select" className="w-[180px]">
+              <SelectTrigger id="type-select" className="w-full md:w-[180px]">
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
@@ -160,16 +155,16 @@ export function FileBrowser({
 
         {isLoading && (
           <div className="flex flex-col gap-8 w-full items-center mt-24">
-            <Loader2 className="h-32 w-32 animate-spin text-gray-500" />
-            <div className="text-2xl">Loading your files...</div>
+            <Loader2 className="h-24 w-24 animate-spin text-gray-500" />
+            <div className="text-xl md:text-2xl">Loading your files...</div>
           </div>
         )}
 
         <TabsContent value="grid">
-          <div className="grid grid-cols-2 gap-4">
-            {modifiedFiles?.map((file) => {
-              return <FileCard key={file._id} file={file} />;
-            })}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {modifiedFiles.map((file) => (
+              <FileCard key={file._id} file={file} />
+            ))}
           </div>
         </TabsContent>
         <TabsContent value="table">
@@ -177,7 +172,6 @@ export function FileBrowser({
         </TabsContent>
       </Tabs>
 
-      {/* Conditionally show the placeholder with different images and messages */}
       {files?.length === 0 && (
         <Placeholder
           message={placeholderMessage}

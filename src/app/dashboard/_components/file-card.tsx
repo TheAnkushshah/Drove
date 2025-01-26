@@ -25,17 +25,17 @@ export function FileCard({
     userId: file.userId,
   });
 
-  const typeIcons = {
+  const typeIcons: Record<Doc<"files">["type"], ReactNode> = {
     image: <ImageIcon />,
     pdf: <FileTextIcon />,
     csv: <GanttChartIcon />,
-  } as Record<Doc<"files">["type"], ReactNode>;
+  };
 
   return (
     <Card>
       <CardHeader className="relative">
         <CardTitle className="flex gap-2 text-base font-normal">
-          <div className="flex justify-center">{typeIcons[file.type]}</div>{" "}
+          <div className="flex justify-center">{typeIcons[file.type]}</div>
           {file.name}
         </CardTitle>
         <div className="absolute top-5 right-4">
@@ -46,12 +46,11 @@ export function FileCard({
         {file.type === "image" && file.url && (
           <Image alt={file.name} width="200" height="100" src={file.url} />
         )}
-
         {file.type === "csv" && <GanttChartIcon className="w-20 h-20" />}
         {file.type === "pdf" && <FileTextIcon className="w-20 h-20" />}
       </CardContent>
       <CardFooter className="flex justify-between">
-        <div className="flex gap-2 text-xs text-gray-700 w-39 items-center">
+        <div className="flex gap-2 text-xs text-gray-700 items-center">
           <Avatar className="w-6 h-6">
             <AvatarImage src={userProfile?.image} />
             <AvatarFallback>CN</AvatarFallback>
