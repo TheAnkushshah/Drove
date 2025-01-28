@@ -20,7 +20,7 @@ export function Header() {
 
   return (
     <div className="relative z-10 border-b py-4 bg-gray-50">
-      <div className="container mx-auto flex items-center justify-between gap-4 px-4 sm:gap-10 sm:px-6 lg:px-8">
+      <div className="container mx-auto flex items-center justify-between gap-4 px-4 sm:gap-10 sm:px-6 lg:pr-8 lg:pl-3">
         {/* Logo and App Name */}
         <Link
           href="/"
