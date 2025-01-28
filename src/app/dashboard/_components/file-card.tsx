@@ -49,7 +49,7 @@ export function FileCard({
         {file.type === "csv" && <GanttChartIcon className="w-20 h-20" />}
         {file.type === "pdf" && <FileTextIcon className="w-20 h-20" />}
       </CardContent>
-      <CardFooter className="flex justify-between">
+      <CardFooter className="flex justify-between md:flex-row flex-col">
         <div className="flex gap-2 text-xs text-gray-700 items-center">
           <Avatar className="w-6 h-6">
             <AvatarImage src={userProfile?.image} />
@@ -57,7 +57,7 @@ export function FileCard({
           </Avatar>
           {userProfile?.name}
         </div>
-        <div className="text-xs text-gray-700">
+        <div className="text-xs text-gray-700 mt-2 md:mt-0">
           Uploaded on {formatRelative(new Date(file._creationTime), new Date())}
         </div>
       </CardFooter>
