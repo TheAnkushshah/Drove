@@ -44,8 +44,11 @@ export function Header() {
 
           {/* Conditionally show OrganizationSwitcher and UserButton on non-home pages */}
           {!isHomePage && (
-            <div className="flex items-center gap-2 mt-1.5">
-              <OrganizationSwitcher />
+            <div className="flex items-center gap-2 mt-0 sm:mt-1.5">
+              {/* Hide OrganizationSwitcher for screens smaller than 412px */}
+              <div className="hidden sm:block md:block">
+                <OrganizationSwitcher />
+              </div>
               <UserButton />
             </div>
           )}
