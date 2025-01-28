@@ -57,7 +57,7 @@ export function FileCard({
           </Avatar>
           {userProfile?.name}
         </div>
-        <div className="text-xs text-gray-700 mt-2 md:mt-0">
+        <div className="text-xs text-gray-700 mt-2 md:mt-0 text-center">
           Uploaded on {formatRelative(new Date(file._creationTime), new Date())}
         </div>
       </CardFooter>
