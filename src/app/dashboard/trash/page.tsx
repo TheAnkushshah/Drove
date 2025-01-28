@@ -4,7 +4,7 @@ import { FileBrowser } from "../_components/file-browser";
 
 export default function FavoritesPage() {
   return (
-    <div>
+    <div className="p-4">
       <FileBrowser title="Trash" deletedOnly />
     </div>
   );
